@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .mover{
+    left: 0;
+    right: 0;
+    background-color: white;
+    height: 4px;
+    width: 5px;
+    position: absolute;
+    border-radius: 10px;
+    transition: 0.4s linear;
+    box-shadow: -1px 1px 11px 4px red;
+  }
+</style>
+  <script>
+    b=document.querySelector("html");
+    m=document.createElement("div");
+    m.classList.add("mover");
+    b.appendChild(m);//Doubt-Not taking by giving `document.body` instead of b
+    b.addEventListener("mousemove",move);
+    function move(y){//Doubt-why this not working by giving `move=(y)=>{}`
+      m.style.transform=`translate3d(${y.clientX}px,${y.clientY}px,0)`;
+    }
+  </script>
+<body>
+  
+</body>
+</html>
